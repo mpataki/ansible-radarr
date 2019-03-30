@@ -4,11 +4,11 @@ This role installs, configures, and runs [radarr](https://radarr.video/).
 
 ## Requirements
 
-Really this should work on any debian based system, but has been tested on a Raspberry Pi running Rasbian (stretch).
+This role was tested on a raspberry pi running raspbian (stretch).
 
 ## Role Variables
 
-These variables are largely straight out of the radarr config file. See [config.xm](templates/config.xml) and the [defaults](defaults/main.yml).
+These variables are largely straight out of the radarr config file. See [config.xml](templates/config.xml) and the [defaults](defaults/main.yml).
 
 ## Dependencies
 
