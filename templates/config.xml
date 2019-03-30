@@ -1,0 +1,14 @@
+<Config>
+  <LogLevel>{{ log_level }}</LogLevel>
+  <Port>{{ radarr_port }}</Port>
+  <UrlBase>{{ url_base }}</UrlBase>
+  <BindAddress>{{ bind_address }}</BindAddress>
+  <SslPort>{{ ssl_port }}</SslPort>
+  <EnableSsl>{{ enable_ssl }}</EnableSsl>
+  <ApiKey>{{ api_key }}</ApiKey>
+  <AuthenticationMethod>{{ authentication_method }}</AuthenticationMethod>
+  <Branch>{{ branch }}</Branch>
+  <LaunchBrowser>{{ launch_browser }}</LaunchBrowser>
+  <SslCertHash>{{ ssl_cert_hash }}</SslCertHash>
+  <UpdateMechanism>{{ update_mechanism }}</UpdateMechanism>
+</Config>

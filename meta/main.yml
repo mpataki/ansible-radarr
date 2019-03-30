@@ -1,0 +1,14 @@
+galaxy_info:
+  role_name: radarr
+  author: Mat Pataki
+  description: 'a radarr installation for the raspberry pi'
+  company: 'n/a'
+  license: MIT
+  min_ansible_version: 2.4
+
+  platforms:
+    - name: Debian
+      versions:
+        - stretch
+
+dependencies: []

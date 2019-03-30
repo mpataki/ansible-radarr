@@ -1,0 +1,13 @@
+---
+
+log_level: Info
+radarr_port: 7878
+url_base: ''
+bind_address: '*'
+ssl_port: 9898
+enable_ssl: 'False'
+authentication_method: None
+branch: develop
+launch_browser: 'True'
+ssl_cert_hash: ''
+update_mechanism: BuiltIn

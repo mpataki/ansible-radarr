@@ -1,0 +1,67 @@
+---
+
+- name: install radarr dependencies
+  apt:
+    name:
+      - curl
+      - mediainfo
+      - apt-transport-https
+      - dirmngr
+      - gnupg
+      - ca-certificates
+    state: present
+  become: true
+
+- name: add mono key server
+  apt_key:
+    keyserver: hkp://keyserver.ubuntu.com:80
+    id: 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+  become: true
+
+- name: place mono stable source
+  copy:
+    src: mono-official-stable.list
+    dest: /etc/apt/sources.list.d/mono-official-stable.list
+    owner: root
+    group: root
+  become: true
+
+- name: update apt cache
+  apt:
+    update_cache: true
+    name: mono-complete
+  become: true
+
+- name: download and unarchive the radarr binary
+  unarchive:
+    remote_src: true
+    src: "https://github.com/Radarr/Radarr/releases/download/v{{ radarr_version }}/Radarr.develop.{{ radarr_version }}.linux.tar.gz"
+    dest: /opt
+    owner: pi
+    group: pi
+  become: true
+
+- name: radarr config
+  template:
+    src: config.xml
+    dest: /home/pi/.config/Radarr/config.xml
+    owner: pi
+    group: pi
+    mode: 0644
+  become: true
+  notify: restart radarr
+
+- name: install the radarr systemd unit file
+  copy:
+    src: files/radarr.service
+    dest: /etc/systemd/system/radarr.service
+    owner: root
+    group: root
+  become: true
+
+- name: start and enable radarr service
+  systemd:
+    name: radarr
+    state: started
+    enabled: true
+  become: true
