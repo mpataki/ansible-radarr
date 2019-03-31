@@ -1,5 +1,7 @@
 # ansible-radarr
 
+[![Build Status](https://travis-ci.org/mpataki/ansible-radarr.svg?branch=master)](https://travis-ci.org/mpataki/ansible-radarr)
+
 This role installs, configures, and runs [radarr](https://radarr.video/).
 
 ## Requirements
